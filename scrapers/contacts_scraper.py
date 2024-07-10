@@ -1,21 +1,14 @@
-import os
 import csv
-from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# Load environment variables from .env file
-print("Loading environment variables...")
-load_dotenv()
-
 # Get the Chrome user data directory from environment variable
-chrome_user_data_dir = os.getenv('CHROME_USER_DATA_DIR')
-if not chrome_user_data_dir:
-    raise ValueError("CHROME_USER_DATA_DIR environment variable not set")
-print("Environment variables loaded successfully.")
+chrome_user_data_dir = r'C:\Users\Lahcen\AppData\Local\Google\Chrome\User Data\Profile 1'
+chrome_driver_path = r'C:\Store\ChromeDriver\chromedriver.exe'
 
 # Set up Chrome options
 print("Setting up Chrome options...")
@@ -25,7 +18,8 @@ chrome_options.add_argument('--profile-directory=Default')
 
 # Start the WebDriver
 print("Starting WebDriver...")
-driver = webdriver.Chrome(options=chrome_options)
+service = Service(chrome_driver_path)
+driver = webdriver.Chrome(service=service, options=chrome_options)
 driver.get('https://web.whatsapp.com')
 
 # Wait for the user to scan the QR code or WhatsApp Web to load
