@@ -13,8 +13,7 @@ This project includes several Python scripts to scrape contacts and chat message
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/whatsapp-scraper.git
-    cd whatsapp-scraper
+    git clone https://github.com/LahcenEzzara/WhatsApp-Scraping-Python.git
     ```
 
 2. **Install the required packages**:
@@ -23,7 +22,7 @@ This project includes several Python scripts to scrape contacts and chat message
     ```
 
 3. **Set up the ChromeDriver**:
-    - Download the ChromeDriver from the link above.
+    - Download the ChromeDriver from the link [ChromeDriver](https://googlechromelabs.github.io/chrome-for-testing/#stable).
     - Extract the downloaded file.
     - Move the `chromedriver` executable to a directory that is in your system's `PATH`.
 
@@ -31,7 +30,7 @@ This project includes several Python scripts to scrape contacts and chat message
     - Create a `.env` file in the project root directory.
     - Add the following content to the `.env` file:
       ```ini
-      CHROME_USER_DATA_DIR=path_to_your_chrome_user_data
+      CHROME_USER_DATA_DIR=C:\Users\<windows_user>\AppData\Local\Google\Chrome\User Data\Profile 1
       ```
 
 ## Usage
@@ -42,7 +41,7 @@ This project includes several Python scripts to scrape contacts and chat message
 2. **Description**: Scrapes contact numbers from WhatsApp Web.
 3. **Run**:
     ```bash
-    python contacts_scraper.py
+    py contacts_scraper.py
     ```
 
 ### Scraping a Single Chat
@@ -52,7 +51,7 @@ This project includes several Python scripts to scrape contacts and chat message
 3. **Configuration**: Edit the script to set the `chat_name` variable to the name of the chat you want to scrape.
 4. **Run**:
     ```bash
-    python single_chat_scraper.py
+    py single_chat_scraper.py
     ```
 
 ### Scraping Multiple Chats from a CSV
@@ -62,7 +61,7 @@ This project includes several Python scripts to scrape contacts and chat message
 3. **Configuration**: Ensure you have a `contact_numbers.csv` file with chat names, one per line.
 4. **Run**:
     ```bash
-    python csv_multi_chat_scraper.py
+    py csv_multi_chat_scraper.py
     ```
 
 ### Scraping Multiple Chats Specified in the Script
@@ -72,7 +71,7 @@ This project includes several Python scripts to scrape contacts and chat message
 3. **Configuration**: Edit the script to update the `chat_names` list with the names of the chats you want to scrape.
 4. **Run**:
     ```bash
-    python multi_chat_scraper.py
+    py multi_chat_scraper.py
     ```
 
 ## Notes
