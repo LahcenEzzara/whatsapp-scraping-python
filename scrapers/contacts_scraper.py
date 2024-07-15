@@ -52,7 +52,8 @@ def scrape_contact_numbers():
         for idx, chat in enumerate(chat_list, start=1):
             contact_number = chat.get_attribute('title')
             # Ignore special characters
-            if contact_number.startswith('‪') or contact_number.startswith('‫'):
+            ignore_chars = ['‪', '‫']
+            if any(contact_number.startswith(char) for char in ignore_chars):
                 continue
             contact_numbers.append(contact_number)
             print(f"Contact {idx}: {contact_number}")
