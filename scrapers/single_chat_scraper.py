@@ -65,7 +65,7 @@ def scrape_whatsapp_chat(chat_name):
         while True:
             driver.execute_script(
                 "document.querySelector('div.copyable-area').scrollTo(0, 0);")
-            time.sleep(1)  # Reduced wait time for quicker scrolling
+            time.sleep(2)  # Adjust the wait time if necessary
             new_height = driver.execute_script(
                 "return document.querySelector('div.copyable-area').scrollHeight")
             if new_height == last_height:
